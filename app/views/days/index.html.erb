@@ -1,0 +1,17 @@
+<div id="container">
+</div>
+
+<script type="text/javascript">
+
+  $(function () {
+
+    window.days = <%= Day.all.to_json.html_safe %>;
+
+    window.TD.initialize(
+      $("#container")[0],
+      window.days
+    );
+
+  })
+
+</script>
