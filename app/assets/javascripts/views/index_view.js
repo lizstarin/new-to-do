@@ -9,6 +9,10 @@ TD.Views.IndexView = Backbone.View.extend({
         var date = day.get("date");
         var id = day.get("id");
         var daydiv = $("<div id='" + id + "'>" + date + "</div>");
+
+        var tasks = day.get("tasks");
+        new TD.Routers.TasksRouter(daydiv, tasks);
+
         div.append(daydiv);
       }
     );
