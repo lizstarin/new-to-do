@@ -5,18 +5,23 @@ TD.Routers.TasksRouter = Backbone.Router.extend({
 
     that.$rootEl = $(rootEl);
     that.tasks = tasks;
+    console.log("INITIALIZING TASKS ROUTER");
   },
 
   routes: {
-    "": "index"
+    "days/:day_id/tasks": "index"
   },
 
   index: function () {
     var that = this;
+    console.log(that.tasks);
 
     var tasksIndexView = new TD.Views.DayView({
-      collection: tasks
+      collection: that.tasks
+      // model: that.day
     });
+
+    that.$rootEl.html(tasksIndexView.render().$el);
   },
 
   new: function () {
