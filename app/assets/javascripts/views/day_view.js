@@ -1,9 +1,9 @@
 TD.Views.DayView = Backbone.View.extend({
 
-  // events: {
-  //   "dblclick .day": "makeNewTask",
-  //   "click .task": "markCompleted"
-  // },
+  events: {
+    "click li": "markCompleted",
+    "dblclick h2": "makeNewTask"
+  },
 
   render: function () {
     var that = this;
@@ -19,19 +19,24 @@ TD.Views.DayView = Backbone.View.extend({
     that.$el.append(renderedTaskList);
     that.$el.append(newTaskView);
 
-    $()
+    that.$el.on("dblclick", that.makeNewTask);
 
     return that;
   },
 
-  // makeNewTask: function () {
-  //   $("#newtask").toggle();
-  // },
+  markCompleted: function (el) {
+    var that = this;
 
-  // markCompleted: function () {
-  //   task.set(completed: true);
-  //   $("li").addClass("strikethrough");
-  // }
+    $(el.target).toggleClass("strikethrough");
+    var taskId = el.target.id;
+    var task = that.model.get("tasks").get(taskId);
+    var completedStatus = !task.get("completed");
+    task.save({completed: completedStatus});
+  },
+
+  makeNewTask: function (el) {
+    $("#newtask").toggle();
+  }
 
 });
 

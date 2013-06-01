@@ -6,11 +6,20 @@
       <% var dueDate = ", due " + task.get("due_date"); %>
     <% } %>
 
-    <li class="task" id="<%= task.get("id") %>">
+     <% if (task.get("completed") === true) { %>
+       <% var classes = "task strikethrough"; %>
+     <% } else { %>
+       <% var classes = "task"; %>
+     <% } %>
+
+    <li class="<%= classes %>" id="<%= task.get("id") %>">
       <%= task.get("name") %><%= dueDate %>
     </li>
   <% }); %>
 </ul>
+<!-- <div class="revealform">
+  - Add a task -
+</div> -->
 
 <!-- var newTaskDiv = $("<div id='newtask'></div>")
 var dayId = that.model.get("id");

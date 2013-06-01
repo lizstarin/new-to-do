@@ -20,8 +20,11 @@ class TasksController < ApplicationController
     redirect_to root_url
   end
 
-  def destroy
-
+  def update
+    @task = Task.find(params[:id])
+    @task.completed = params[:completed]
+    @task.update_attributes(:completed => params[:completed])
+    redirect_to root_url
   end
 
 end
