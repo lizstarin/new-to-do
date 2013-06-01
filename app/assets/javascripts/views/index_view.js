@@ -1,5 +1,9 @@
 TD.Views.IndexView = Backbone.View.extend({
 
+  // events: {
+  //   "dblclick .day": "makeNewTask"
+  // },
+
   render: function () {
     var that = this;
 
@@ -11,7 +15,7 @@ TD.Views.IndexView = Backbone.View.extend({
 
       var date = day.get("date");
       var id = day.get("id");
-      var daydiv = $("<div id='" + id + "'>" + date + "</div>");
+      var daydiv = $("<div class='day' id='" + id + "'>" + date + "</div>");
       var dayView = new TD.Views.DayView({
         model: day
       }).render().el;
@@ -20,9 +24,16 @@ TD.Views.IndexView = Backbone.View.extend({
       div.append(daydiv);
     });
 
+    var title = $("<h1>To do:</h1>")
+
     that.$el.append(div);
+    that.$el.prepend(title);
     return that;
-  }
+  }// ,
+//
+//   makeNewTask: function () {
+//     $("#newtask").toggle();
+//   }
 
 });
 

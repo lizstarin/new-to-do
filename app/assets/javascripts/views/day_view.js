@@ -1,5 +1,10 @@
 TD.Views.DayView = Backbone.View.extend({
 
+  // events: {
+  //   "dblclick .day": "makeNewTask",
+  //   "click .task": "markCompleted"
+  // },
+
   render: function () {
     var that = this;
     var tasks = that.model.get("tasks");
@@ -13,8 +18,20 @@ TD.Views.DayView = Backbone.View.extend({
 
     that.$el.append(renderedTaskList);
     that.$el.append(newTaskView);
+
+    $()
+
     return that;
-  }
+  },
+
+  // makeNewTask: function () {
+  //   $("#newtask").toggle();
+  // },
+
+  // markCompleted: function () {
+  //   task.set(completed: true);
+  //   $("li").addClass("strikethrough");
+  // }
 
 });
 

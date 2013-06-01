@@ -6,8 +6,18 @@
       <% var dueDate = ", due " + task.get("due_date"); %>
     <% } %>
 
-    <li id="<%= task.get("id") %>">
+    <li class="task" id="<%= task.get("id") %>">
       <%= task.get("name") %><%= dueDate %>
     </li>
   <% }); %>
 </ul>
+
+<!-- var newTaskDiv = $("<div id='newtask'></div>")
+var dayId = that.model.get("id");
+var newTaskView = new TD.Views.NewTaskView().render(dayId).el;
+
+newTaskDiv.append(newTaskView);
+that.$el.append(ul);
+that.$el.append(newTaskDiv);
+return that; -->
+

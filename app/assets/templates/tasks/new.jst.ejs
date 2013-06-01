@@ -1,7 +1,8 @@
-<div id="newtask">
+<div id="newtask" style="display:none">
   <form action='/days/<%= dayId %>/tasks' method='post'>
-    <input type='text' name='task[name]'>
-    <input type='date' name='task[due_date]'>
-    <input type='submit' value='ADD TASK'>
+    <input class='field' type='text' name='task[name]'>
+    <input class='field' type='date' name='task[due_date]'>
+    <input class='completed' type='hidden' name='task[completed]' value='false'>
+    <input class='button' type='submit' value='ADD TASK'>
   </form>
 </div>

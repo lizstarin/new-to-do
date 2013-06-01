@@ -9,7 +9,7 @@ TD.Views.NewTaskView = Backbone.View.extend({
       dayId: dayId
     });
 
-    that.$el.html(renderedContent);
+    that.$el.append(renderedContent);
     return that;
   }
 
