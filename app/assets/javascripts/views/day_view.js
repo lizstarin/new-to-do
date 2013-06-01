@@ -24,7 +24,20 @@ TD.Views.DayView = Backbone.View.extend({
       ul.append(li);
     });
 
+    var newTaskDiv = $("<div id='newtask'></div>")
+    // console.log("STARTING NEW TASK VIEW");
+    // console.log(that.model);
+    // var task = new TD.Models.Task();
+
+    var newTaskView = TD.Views.NewTaskView({
+
+    }).render().el;
+    console.log("MADE NEW TASK VIEW");
+
+    newTaskDiv.append(newTaskView);
+
     that.$el.append(ul);
+    that.$el.append(newTaskDiv);
     return that;
   }
 

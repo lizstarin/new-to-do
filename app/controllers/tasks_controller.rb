@@ -9,14 +9,14 @@ class TasksController < ApplicationController
     end
   end
 
-  # def new
-  #   @task = Task.new
-  # end
+  def new
+    @task = Task.new
+  end
 
   def create
     @task = Task.new(params[:task])
     @task.save
-    redirect_to root_url
+    render :nothing
   end
 
   def destroy
