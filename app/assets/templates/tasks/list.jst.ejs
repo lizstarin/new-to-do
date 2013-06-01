@@ -1,0 +1,13 @@
+<ul>
+  <% _.each(tasks.models, function (task) { %>
+    <% if (task.get("due_date") === null) { %>
+      <% var dueDate = ""; %>
+    <% } else { %>
+      <% var dueDate = ", due " + task.get("due_date"); %>
+    <% } %>
+
+    <li id="<%= task.get("id") %>">
+      <%= task.get("name") %><%= dueDate %>
+    </li>
+  <% }); %>
+</ul>

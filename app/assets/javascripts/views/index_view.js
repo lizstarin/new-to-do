@@ -2,13 +2,13 @@ TD.Views.IndexView = Backbone.View.extend({
 
   render: function () {
     var that = this;
-    console.log("RENDERING INDEX VIEW");
+
     var tasks = that.collection
 
     var div = $("<div id='calendar'></div>");
 
     _.each(that.collection.models, function (day) {
-      console.log("IN INDEX VIEW RENDER LOOP");
+
       var date = day.get("date");
       var id = day.get("id");
       var daydiv = $("<div id='" + id + "'>" + date + "</div>");
@@ -25,3 +25,21 @@ TD.Views.IndexView = Backbone.View.extend({
   }
 
 });
+
+
+// TD.Views.IndexView = Backbone.View.extend({
+//
+//   render: function () {
+//     var that = this;
+//     var days = that.collection.models;
+//     // console.log(days[0].get("date"));
+//
+//     var renderedDayList = JST["days/list"]({
+//       days: days
+//     });
+//
+//     that.$el.html(renderedDayList);
+//     return that;
+//   }
+//
+// });

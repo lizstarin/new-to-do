@@ -5,7 +5,6 @@ TD.Routers.TasksRouter = Backbone.Router.extend({
 
     that.$rootEl = $(rootEl);
     that.tasks = tasks;
-    console.log("INITIALIZING TASKS ROUTER");
   },
 
   routes: {

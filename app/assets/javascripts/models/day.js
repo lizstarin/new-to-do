@@ -16,16 +16,12 @@ TD.Collections.Tasks = Backbone.Collection.extend({
 TD.Models.Day = Backbone.RelationalModel.extend({
 
   initialize: function () {
-    console.log("INITIALIZING DAY MODEL");
     var that = this;
-
     var tasks = that.get("tasks");
 
     tasks.fetch({
       async: false
     });
-
-    console.log("TASKS FETCHED");
   },
 
   relations: [{
