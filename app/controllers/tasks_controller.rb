@@ -15,8 +15,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
+    @task.day_id = params[:day_id]
     @task.save
-    render :nothing
+    redirect_to root_url
   end
 
   def destroy

@@ -23,15 +23,17 @@ TD.Views.DayView = Backbone.View.extend({
       li.append(name + ", due " + dueDate);
       ul.append(li);
     });
+    console.log("TASK RENDER LOOP DONE");
 
     var newTaskDiv = $("<div id='newtask'></div>")
     // console.log("STARTING NEW TASK VIEW");
     // console.log(that.model);
     // var task = new TD.Models.Task();
+    var dayId = that.model.get("id");
 
-    var newTaskView = TD.Views.NewTaskView({
+    var newTaskView = new TD.Views.NewTaskView({
 
-    }).render().el;
+    }).render(dayId).el;
     console.log("MADE NEW TASK VIEW");
 
     newTaskDiv.append(newTaskView);
