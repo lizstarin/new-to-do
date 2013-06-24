@@ -15,6 +15,10 @@ body {
   box-shadow: 0px 5px 30px -2px #AAA;
 }
 
+.newday > h2 {
+  font-family: Bevan;
+}
+
 .day {
   margin: 20px;
   padding: 35px 0px 0px 0px;
@@ -74,5 +78,9 @@ h2 {
 
 .strikethrough {
   text-decoration: line-through;
+}
+
+.is-off {
+  display: none;
 }
 

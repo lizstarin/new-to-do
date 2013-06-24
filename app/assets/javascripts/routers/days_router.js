@@ -8,7 +8,8 @@ TD.Routers.DaysRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index"
+    "": "index",
+    "days/new": "new"
   },
 
   index: function () {
@@ -19,6 +20,12 @@ TD.Routers.DaysRouter = Backbone.Router.extend({
     });
 
     that.$rootEl.html(indexView.render().$el);
+  },
+
+  new: function () {
+    var that = this;
+
+
   }
 
 });

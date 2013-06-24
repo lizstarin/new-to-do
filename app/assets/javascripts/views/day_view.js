@@ -1,8 +1,7 @@
 TD.Views.DayView = Backbone.View.extend({
 
   events: {
-    "click li": "markCompleted",
-    "dblclick h2": "makeNewTask"
+    "click li": "markCompleted"
   },
 
   render: function () {
@@ -35,7 +34,16 @@ TD.Views.DayView = Backbone.View.extend({
   },
 
   makeNewTask: function (el) {
-    $("#newtask").toggle();
+    var that = this;
+    var taskForm = $(that).find(".newtask")
+
+    if (taskForm.hasClass("is-off")) {
+      taskForm.removeClass("is-off");
+    } else {
+      taskForm.addClass("is-off");
+    }
+
+    console.log("doubleclicked");
   }
 
 });
