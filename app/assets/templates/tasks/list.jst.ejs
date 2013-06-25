@@ -1,4 +1,4 @@
-<ul>
+<section class="tasklist">
   <% _.each(tasks.models, function (task) { %>
     <% if (task.get("due_date") === null) { %>
       <% var dueDate = ""; %>
@@ -12,21 +12,10 @@
        <% var classes = "task"; %>
      <% } %>
 
-    <li class="<%= classes %>" id="<%= task.get("id") %>">
+    <article class="<%= classes %> task" id="<%= task.get("id") %>">
       <%= task.get("name") %><%= dueDate %>
-    </li>
+    </article>
   <% }); %>
-</ul>
-<!-- <div class="revealform">
-  - Add a task -
-</div> -->
+</div>
 
-<!-- var newTaskDiv = $("<div id='newtask'></div>")
-var dayId = that.model.get("id");
-var newTaskView = new TD.Views.NewTaskView().render(dayId).el;
-
-newTaskDiv.append(newTaskView);
-that.$el.append(ul);
-that.$el.append(newTaskDiv);
-return that; -->
 

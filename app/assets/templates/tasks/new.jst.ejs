@@ -1,8 +1,8 @@
 <div class="newtask is-off">
-  <form action='/days/<%= dayId %>/tasks' method='post'>
-    <input class='field' type='text' name='task[name]'>
-    <input class='field' type='date' name='task[due_date]'>
+  <h3>Add a task:</h3>
+  <form action='/days/<%= dayId %>/tasks' method='post' autocomplete='off'>
+    <input class='field clearfix' type='text' name='task[name]'>
     <input class='completed' type='hidden' name='task[completed]' value='false'>
-    <input class='button' type='submit' value='ADD TASK'>
+    <input class='button' type='submit' value='ADD'>
   </form>
 </div>

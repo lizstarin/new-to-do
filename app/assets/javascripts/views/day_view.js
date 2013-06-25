@@ -1,7 +1,7 @@
 TD.Views.DayView = Backbone.View.extend({
 
   events: {
-    "click li": "markCompleted"
+    "click article": "markCompleted"
   },
 
   render: function () {
