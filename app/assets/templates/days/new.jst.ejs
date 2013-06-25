@@ -1,7 +1,7 @@
 <div class="newday is-off">
   <h2>Add a day:</h2>
   <form action='/days' method='post'>
-    <input class='field' type='date' name='day[date]'>
+    <input class='field' type='date' min='<%= today %>' name='day[date]'>
     <input class='button' type='submit' value='ADD DAY'>
   </form>
 </div>

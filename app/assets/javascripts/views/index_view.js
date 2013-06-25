@@ -6,12 +6,15 @@ TD.Views.IndexView = Backbone.View.extend({
 
   render: function () {
     var that = this;
-
-    var tasks = that.collection
-
     var div = $("<div id='calendar'></div>");
 
-    _.each(that.collection.models, function (day) {
+    var tasks = that.collection;
+    var days = that.collection.models;
+    var daysSorted = _.sortBy(days, function (day) {
+      return day.get("date");
+    });
+
+    _.each(daysSorted, function (day) {
       var date = day.get("date");
       var id = day.get("id");
       var dayDiv = $("<div class='day' id='" + id + "'><h2>" + date + "</h2></div>");
@@ -23,14 +26,14 @@ TD.Views.IndexView = Backbone.View.extend({
       div.append(dayDiv);
     });
 
-    var header = $("<div id='header'><h1>To do:</h1></div>");
+    var today = new Date().toISOString().slice(0,10);
+    var newDayView = new TD.Views.NewDayView().render(today).el;
 
-    console.log(that);
-    var newDayView = new TD.Views.NewDayView().render().el;
+    var header = $("<div id='header'><h1>To do:</h1></div>");
+    header.append(newDayView);
 
     that.$el.append(div);
     that.$el.prepend(header);
-    that.$el.append(newDayView);
     return that;
   },
 
