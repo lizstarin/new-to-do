@@ -32,12 +32,17 @@ h3 {
   padding: 35px 0px 0px 0px;
 }
 
+.newday {
+  padding-bottom: 25px;
+}
+
 .tasklist {
   display: inline-block;
   font-size: 18px;
   font-family: Copse;
   font-weight: 100;
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 article.task {
@@ -54,6 +59,10 @@ article.task {
 
 .task {
   color: #666666;
+}
+
+.newtask {
+  padding-bottom: 15px;
 }
 
 .day {
