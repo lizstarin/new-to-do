@@ -21,7 +21,7 @@ class DaysController < ApplicationController
     end
 
     tasks = collect_floating_tasks
-    sorted_days = @days.sort_by { |el| el.date }
+    sorted_days = Day.all.sort_by { |el| el.date }
 
     unless tasks.empty?
       unless sorted_days.first.date == Date.today
