@@ -23,6 +23,7 @@ body {
 
 h3 {
   font-family: Bevan;
+	font-weight: 400;
   font-size: 20px;
   margin-bottom: 5px;
 }
@@ -68,6 +69,7 @@ article.task {
 .day {
   font-size: 20px;
   font-family: Bevan;
+	font-weight: 400;
 /*  color: #AEBAC6;*/
   color: #FF4930;
   line-height: 20px;
@@ -99,8 +101,8 @@ select {
   font-size: 12px;
   color: #999;
   background-color: white;
-  font-weight: none;
   font-family: Bevan;
+	font-weight: 400;
   box-shadow: inset 0px -6px 10px 2px rgba(200,200,200,0.5);
 }
 
@@ -113,11 +115,14 @@ select {
 h1 {
   font-family: Bevan;
   font-size: 72px;
+	font-weight: 400;
 }
 
 h2 {
   margin: 10px 0px 0px 0px;
   cursor: default;
+	font-family: Bevan;
+	font-weight: 400;
 }
 
 .strikethrough {
