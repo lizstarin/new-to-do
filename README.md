@@ -2,6 +2,10 @@
 
 A simple to-do list with sharp styling and snappy UI.
 
+## Heroku
+
+http://infinite-escarpment-4271.herokuapp.com/
+
 ## Getting started
 
 Double-click the header to add a day.
