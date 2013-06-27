@@ -1,6 +1,6 @@
 # To Do app
 
-A simple to-do list with sharp styling and snappy UI. (And my playground for learning jQuery and Backbone.)
+A simple to-do list with sharp styling and snappy UI.
 
 ## Getting started
 
